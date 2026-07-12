@@ -53,29 +53,38 @@ This project uses:
 ```text
 AeroOSP/
 │
+├── app/
+│   └── streamlit_app.py          # Optional dashboard
+│
 ├── data/
-│   ├── raw/              # Original downloaded data
-│   ├── processed/        # Cleaned and transformed data
+│   ├── raw/                      # Downloaded source files, not edited
+│   ├── interim/                  # Cleaned but not final
+│   └── processed/                # Model-ready tables
 │
 ├── notebooks/
-│   ├── 01_data_loading.ipynb
-│   ├── 02_exploratory_analysis.ipynb
+│   ├── 01_data_source_exploration.ipynb
+│   ├── 02_cleaning_and_eda.ipynb
 │   ├── 03_feature_engineering.ipynb
-│   └── 04_model_testing.ipynb
+│   ├── 04_baseline_model.ipynb
+│   ├── 05_next_three_flights.ipynb
+│   └── 06_bayesian_or_hmm_extension.ipynb
+│
+├── reports/
+│   ├── figures/                  # Charts and visual outputs
+│   └── proposal/                 # Proposal notes and planning files
 │
 ├── src/
-│   ├── data_cleaning.py
-│   ├── feature_engineering.py
-│   ├── visualisation.py
-│   └── modelling.py
+│   ├── config.py                 # Project settings and paths
+│   ├── load_data.py              # Data loading functions
+│   ├── clean_data.py             # Cleaning functions
+│   ├── features.py               # Feature engineering
+│   ├── targets.py                # Target/proxy definitions
+│   ├── model_baseline.py         # Baseline ML model
+│   └── evaluate.py               # Model evaluation
 │
-├── outputs/
-│   ├── charts/
-│   └── reports/
-│
+├── .gitignore
 ├── README.md
-├── requirements.txt
-└── .gitignore
+└── requirements.txt
 ```
 
 ---
